@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mashaka Hassan Mrisho - CV</title>
+    <title>Dr. Mrisho M. Hassan - CV</title>
     <style>
         * {
             margin: 0;
@@ -52,14 +52,10 @@
             }
         }
 
-        /* Page 1 - Header + Career Profile + Experience */
+        /* Page 1 - Sidebar on LEFT + Main Content on RIGHT */
         .page-1 {
             display: flex;
-        }
-
-        .main-content {
-            flex: 1;
-            padding: 30px 25px;
+            flex-direction: row;
         }
 
         .sidebar {
@@ -67,21 +63,13 @@
             background: #2c7a7b;
             color: white;
             padding: 30px 20px;
+            order: 1; /* Sidebar on LEFT */
         }
 
-        .header-name {
-            font-size: 28pt;
-            font-weight: 700;
-            color: #2c7a7b;
-            margin-bottom: 5px;
-            letter-spacing: 1px;
-        }
-
-        .header-title {
-            font-size: 12pt;
-            color: #666;
-            margin-bottom: 25px;
-            font-weight: 500;
+        .main-content {
+            flex: 1;
+            padding: 30px 25px;
+            order: 2; /* Main content on RIGHT */
         }
 
         .section-title {
@@ -176,10 +164,11 @@
             font-weight: 700;
             text-align: center;
             margin-bottom: 5px;
+            line-height: 1.3;
         }
 
         .sidebar-title {
-            font-size: 9pt;
+            font-size: 10pt;
             text-align: center;
             opacity: 0.9;
             margin-bottom: 25px;
@@ -258,7 +247,7 @@
             left: 0;
         }
 
-        /* Page 2 - Education + Publications + Works in Progress */
+        /* Page 2 - Full Width */
         .page-2, .page-3 {
             display: flex;
         }
@@ -382,85 +371,15 @@
 <body>
     <button class="print-btn no-print" onclick="window.print()">🖨️ Print / Save as PDF</button>
 
-    <!-- PAGE 1 -->
+    <!-- PAGE 1 - Sidebar on LEFT, Main Content on RIGHT -->
     <div class="page page-1">
-        <div class="main-content">
-            <div class="header-name">MASHAKA HASSAN MRISHO</div>
-            <div class="header-title">Masters of Dentistry in Orthodontics</div>
-
-            <div class="section">
-                <div class="section-title">
-                    <span class="section-icon">👤</span>
-                    Career Profile
-                </div>
-                <p class="career-text">
-                    Dental researcher and orthodontist with expertise in CBCT analysis of alveolar bone defects and machine learning applications for predicting bone fenestration/dehiscence. Currently pursuing a Master's in Dentistry (Orthodontics) at Jinzhou Medical University, China. Research interests focus on tissue engineering and regenerative medicine, with emphasis on application of engineered tissues in the management and prevention of orofacial diseases and injuries to promote oral health and quality of life.
-                </p>
-            </div>
-
-            <div class="section">
-                <div class="section-title">
-                    <span class="section-icon">💼</span>
-                    Experience
-                </div>
-
-                <div class="experience-item">
-                    <div class="exp-header">
-                        <span class="exp-title">Tutorial Assistant & General Dentist</span>
-                        <span class="exp-date">Nov 2022 – To date</span>
-                    </div>
-                    <div class="exp-company">Muhimbili University of Health and Allied Sciences (MUHAS), Tanzania</div>
-                </div>
-
-                <div class="experience-item">
-                    <div class="exp-header">
-                        <span class="exp-title">General Dentist</span>
-                        <span class="exp-date">Jan 2021 – Nov 2022</span>
-                    </div>
-                    <div class="exp-company">Smart Specialized Dental Clinic, Tanzania</div>
-                </div>
-
-                <div class="experience-item">
-                    <div class="exp-header">
-                        <span class="exp-title">Internship</span>
-                        <span class="exp-date">Nov 2019 – Nov 2020</span>
-                    </div>
-                    <div class="exp-company">Muhimbili National Hospital (MNH), Tanzania</div>
-                </div>
-            </div>
-
-            <div class="section">
-                <div class="section-title">
-                    <span class="section-icon">📚</span>
-                    Publications
-                </div>
-
-                <div class="publication-item">
-                    <div class="pub-title">Closed Traction of Impacted Anterior Teeth Using Auxiliary Arch Wire</div>
-                    <div class="pub-authors">Li J, Lingling C, Mrisho M, et al.</div>
-                    <div class="pub-journal">Orthodontic Case Report</div>
-                </div>
-
-                <div class="publication-item">
-                    <div class="pub-title">Key Predictors of Undiagnosed Hypertension Among Middle-Aged Adults in Tanzania: A Machine Learning Analysis of 2022 Demographic and Health Survey</div>
-                    <div class="pub-authors">Tesha I, Liu C, Mrisho M, et al.</div>
-                    <div class="pub-journal">Published</div>
-                </div>
-
-                <div class="publication-item">
-                    <div class="pub-title">Factors Influencing Hemoglobin Variability and Its Prognostic Implications in Chronic Kidney Disease in Dialysis Patients</div>
-                    <div class="pub-authors">Mtore MM, Kombo AM, Tesha I, Mrisho MH, Assad KM, Nofli FO, Ye D, Zhang J, Xue X, Wang G, Zhou H</div>
-                    <div class="pub-journal">JMIRx Med, 2026 (In Press)</div>
-                </div>
-            </div>
-        </div>
-
+        <!-- SIDEBAR (LEFT) -->
         <div class="sidebar">
             <div class="profile-img-container">
-                <img src="profile.jpg" alt="Mashaka Hassan Mrisho" alt="Profile" class="profile-img" onerror="this.style.display='none'">
+                <img src="profile.jpg" alt="Dr. Mrisho M. Hassan" class="profile-img" onerror="this.style.display='none'">
             </div>
-            <div class="sidebar-name">Mashaka<br>Hassan<br>Mrisho</div>
-            <div class="sidebar-title">Masters of Dentistry<br>in Orthodontics</div>
+            <div class="sidebar-name">DR. MRISHO<br>M. HASSAN</div>
+            <div class="sidebar-title">DDS, MDent<br>(Orthodontics)</div>
 
             <div class="sidebar-section">
                 <div class="sidebar-section-title">Contact</div>
@@ -522,6 +441,80 @@
                 <div class="interest-item">Tissue Engineering & Regenerative Medicine</div>
                 <div class="interest-item">CBCT Imaging & Machine Learning</div>
                 <div class="interest-item">Orofacial Disease Management</div>
+            </div>
+        </div>
+
+        <!-- MAIN CONTENT (RIGHT) - NO HEADER NAME -->
+        <div class="main-content">
+            <div class="section">
+                <div class="section-title">
+                    <span class="section-icon">👤</span>
+                    Career Profile
+                </div>
+                <p class="career-text">
+                    Dental researcher and orthodontist with expertise in CBCT analysis of alveolar bone defects 
+                    and machine learning applications for predicting bone fenestration/dehiscence. 
+                    Currently pursuing a Master's in Dentistry (Orthodontics) at Jinzhou Medical University, China. 
+                    Research interests focus on tissue engineering and regenerative medicine, with emphasis on 
+                    application of engineered tissues in the management and prevention of orofacial diseases 
+                    and injuries to promote oral health and quality of life.
+                </p>
+            </div>
+
+            <div class="section">
+                <div class="section-title">
+                    <span class="section-icon">💼</span>
+                    Experience
+                </div>
+
+                <div class="experience-item">
+                    <div class="exp-header">
+                        <span class="exp-title">Tutorial Assistant & General Dentist</span>
+                        <span class="exp-date">Nov 2022 – To date</span>
+                    </div>
+                    <div class="exp-company">Muhimbili University of Health and Allied Sciences (MUHAS), Tanzania</div>
+                </div>
+
+                <div class="experience-item">
+                    <div class="exp-header">
+                        <span class="exp-title">General Dentist</span>
+                        <span class="exp-date">Jan 2021 – Nov 2022</span>
+                    </div>
+                    <div class="exp-company">Smart Specialized Dental Clinic, Tanzania</div>
+                </div>
+
+                <div class="experience-item">
+                    <div class="exp-header">
+                        <span class="exp-title">Internship</span>
+                        <span class="exp-date">Nov 2019 – Nov 2020</span>
+                    </div>
+                    <div class="exp-company">Muhimbili National Hospital (MNH), Tanzania</div>
+                </div>
+            </div>
+
+            <div class="section">
+                <div class="section-title">
+                    <span class="section-icon">📚</span>
+                    Publications
+                </div>
+
+                <div class="publication-item">
+                    <div class="pub-title">Closed Traction of Impacted Anterior Teeth Using Auxiliary Arch Wire</div>
+                    <div class="pub-authors">Li J, Lingling C, Mrisho M, et al.</div>
+                    <div class="pub-journal">Orthodontic Case Report</div>
+                </div>
+
+                <div class="publication-item">
+                    <div class="pub-title">Key Predictors of Undiagnosed Hypertension Among Middle-Aged Adults in Tanzania: A Machine Learning Analysis of 2022 Demographic and Health Survey</div>
+                    <div class="pub-authors">Tesha I, Liu C, Mrisho M, et al.</div>
+                    <div class="pub-journal">Published</div>
+                </div>
+
+                <div class="publication-item">
+                    <div class="pub-title">Factors Influencing Hemoglobin Variability and Its Prognostic Implications in Chronic Kidney Disease in Dialysis Patients</div>
+                    <div class="pub-authors">Mtore MM, Kombo AM, Tesha I, Mrisho MH, Assad KM, Nofli FO, Ye D, Zhang J, Xue X, Wang G, Zhou H</div>
+                    <div class="pub-journal">JMIRx Med, 2026 (In Press)</div>
+                </div>
             </div>
         </div>
     </div>
