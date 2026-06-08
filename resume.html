@@ -1,0 +1,627 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mashaka Hassan Mrisho - CV</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-size: 11pt;
+            line-height: 1.4;
+            color: #333;
+            background: #f5f5f5;
+        }
+
+        .page {
+            width: 210mm;
+            min-height: 297mm;
+            max-height: 297mm;
+            margin: 20px auto;
+            background: white;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            overflow: hidden;
+            page-break-after: always;
+            page-break-inside: avoid;
+        }
+
+        .page:last-child {
+            page-break-after: auto;
+        }
+
+        @media print {
+            body {
+                background: white;
+            }
+            .page {
+                margin: 0;
+                box-shadow: none;
+                width: 100%;
+                min-height: 100vh;
+                max-height: none;
+                page-break-after: always;
+            }
+            .no-print {
+                display: none !important;
+            }
+        }
+
+        /* Page 1 - Header + Career Profile + Experience */
+        .page-1 {
+            display: flex;
+        }
+
+        .main-content {
+            flex: 1;
+            padding: 30px 25px;
+        }
+
+        .sidebar {
+            width: 75mm;
+            background: #2c7a7b;
+            color: white;
+            padding: 30px 20px;
+        }
+
+        .header-name {
+            font-size: 28pt;
+            font-weight: 700;
+            color: #2c7a7b;
+            margin-bottom: 5px;
+            letter-spacing: 1px;
+        }
+
+        .header-title {
+            font-size: 12pt;
+            color: #666;
+            margin-bottom: 25px;
+            font-weight: 500;
+        }
+
+        .section-title {
+            font-size: 14pt;
+            font-weight: 700;
+            color: #2c7a7b;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 15px;
+            padding-bottom: 8px;
+            border-bottom: 2px solid #2c7a7b;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .section-icon {
+            width: 24px;
+            height: 24px;
+            background: #2c7a7b;
+            border-radius: 50%;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 12px;
+        }
+
+        .section {
+            margin-bottom: 25px;
+        }
+
+        .career-text {
+            text-align: justify;
+            color: #555;
+            font-size: 10.5pt;
+            line-height: 1.6;
+        }
+
+        .experience-item {
+            margin-bottom: 20px;
+        }
+
+        .exp-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            margin-bottom: 5px;
+        }
+
+        .exp-title {
+            font-weight: 700;
+            font-size: 11pt;
+            color: #333;
+        }
+
+        .exp-date {
+            font-size: 9pt;
+            color: #888;
+            font-style: italic;
+        }
+
+        .exp-company {
+            font-size: 10pt;
+            color: #666;
+            font-style: italic;
+            margin-bottom: 5px;
+        }
+
+        .exp-desc {
+            font-size: 10pt;
+            color: #555;
+            line-height: 1.5;
+        }
+
+        /* Sidebar Styles */
+        .profile-img-container {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .profile-img {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            border: 3px solid white;
+            object-fit: cover;
+        }
+
+        .sidebar-name {
+            font-size: 16pt;
+            font-weight: 700;
+            text-align: center;
+            margin-bottom: 5px;
+        }
+
+        .sidebar-title {
+            font-size: 9pt;
+            text-align: center;
+            opacity: 0.9;
+            margin-bottom: 25px;
+            line-height: 1.4;
+        }
+
+        .sidebar-section {
+            margin-bottom: 25px;
+        }
+
+        .sidebar-section-title {
+            font-size: 11pt;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 12px;
+            padding-bottom: 5px;
+            border-bottom: 1px solid rgba(255,255,255,0.3);
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            margin-bottom: 10px;
+            font-size: 9pt;
+            word-break: break-word;
+        }
+
+        .contact-icon {
+            width: 16px;
+            height: 16px;
+            flex-shrink: 0;
+        }
+
+        .education-item {
+            margin-bottom: 15px;
+        }
+
+        .edu-degree {
+            font-weight: 700;
+            font-size: 10pt;
+            margin-bottom: 3px;
+        }
+
+        .edu-school {
+            font-size: 9pt;
+            opacity: 0.9;
+            margin-bottom: 2px;
+        }
+
+        .edu-year {
+            font-size: 8pt;
+            opacity: 0.8;
+        }
+
+        .language-item {
+            margin-bottom: 8px;
+            font-size: 10pt;
+        }
+
+        .lang-name {
+            font-weight: 600;
+        }
+
+        .interest-item {
+            font-size: 9pt;
+            margin-bottom: 6px;
+            padding-left: 15px;
+            position: relative;
+        }
+
+        .interest-item::before {
+            content: "▸";
+            position: absolute;
+            left: 0;
+        }
+
+        /* Page 2 - Education + Publications + Works in Progress */
+        .page-2, .page-3 {
+            display: flex;
+        }
+
+        .full-width {
+            flex: 1;
+            padding: 30px 25px;
+        }
+
+        .publication-item {
+            margin-bottom: 18px;
+        }
+
+        .pub-title {
+            font-weight: 700;
+            font-size: 10.5pt;
+            color: #333;
+            margin-bottom: 4px;
+        }
+
+        .pub-authors {
+            font-size: 9.5pt;
+            color: #555;
+            font-style: italic;
+            margin-bottom: 3px;
+        }
+
+        .pub-journal {
+            font-size: 9pt;
+            color: #2c7a7b;
+            font-weight: 600;
+        }
+
+        .training-item {
+            margin-bottom: 15px;
+        }
+
+        .training-title {
+            font-weight: 700;
+            font-size: 10.5pt;
+        }
+
+        .training-institution {
+            font-size: 9.5pt;
+            color: #666;
+            font-style: italic;
+        }
+
+        .training-date {
+            font-size: 9pt;
+            color: #888;
+        }
+
+        .research-text {
+            text-align: justify;
+            font-size: 10.5pt;
+            line-height: 1.6;
+            color: #555;
+        }
+
+        .declaration-text {
+            font-size: 10pt;
+            line-height: 1.6;
+            text-align: justify;
+        }
+
+        .signature-line {
+            margin-top: 30px;
+            border-top: 1px solid #333;
+            width: 200px;
+            padding-top: 5px;
+            font-weight: 700;
+        }
+
+        .referee-item {
+            margin-bottom: 20px;
+        }
+
+        .ref-name {
+            font-weight: 700;
+            font-size: 10.5pt;
+        }
+
+        .ref-title {
+            font-size: 9.5pt;
+            color: #666;
+            font-style: italic;
+        }
+
+        .ref-contact {
+            font-size: 9pt;
+            color: #555;
+        }
+
+        .print-btn {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            padding: 12px 24px;
+            background: #2c7a7b;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 12pt;
+            font-weight: 600;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+
+        .print-btn:hover {
+            background: #236060;
+        }
+
+        @media print {
+            .print-btn {
+                display: none !important;
+            }
+        }
+    </style>
+</head>
+<body>
+    <button class="print-btn no-print" onclick="window.print()">🖨️ Print / Save as PDF</button>
+
+    <!-- PAGE 1 -->
+    <div class="page page-1">
+        <div class="main-content">
+            <div class="header-name">MASHAKA HASSAN MRISHO</div>
+            <div class="header-title">Masters of Dentistry in Orthodontics</div>
+
+            <div class="section">
+                <div class="section-title">
+                    <span class="section-icon">👤</span>
+                    Career Profile
+                </div>
+                <p class="career-text">
+                    Dental researcher and orthodontist with expertise in CBCT analysis of alveolar bone defects and machine learning applications for predicting bone fenestration/dehiscence. Currently pursuing a Master's in Dentistry (Orthodontics) at Jinzhou Medical University, China. Research interests focus on tissue engineering and regenerative medicine, with emphasis on application of engineered tissues in the management and prevention of orofacial diseases and injuries to promote oral health and quality of life.
+                </p>
+            </div>
+
+            <div class="section">
+                <div class="section-title">
+                    <span class="section-icon">💼</span>
+                    Experience
+                </div>
+
+                <div class="experience-item">
+                    <div class="exp-header">
+                        <span class="exp-title">Tutorial Assistant & General Dentist</span>
+                        <span class="exp-date">Nov 2022 – To date</span>
+                    </div>
+                    <div class="exp-company">Muhimbili University of Health and Allied Sciences (MUHAS), Tanzania</div>
+                </div>
+
+                <div class="experience-item">
+                    <div class="exp-header">
+                        <span class="exp-title">General Dentist</span>
+                        <span class="exp-date">Jan 2021 – Nov 2022</span>
+                    </div>
+                    <div class="exp-company">Smart Specialized Dental Clinic, Tanzania</div>
+                </div>
+
+                <div class="experience-item">
+                    <div class="exp-header">
+                        <span class="exp-title">Internship</span>
+                        <span class="exp-date">Nov 2019 – Nov 2020</span>
+                    </div>
+                    <div class="exp-company">Muhimbili National Hospital (MNH), Tanzania</div>
+                </div>
+            </div>
+
+            <div class="section">
+                <div class="section-title">
+                    <span class="section-icon">📚</span>
+                    Publications
+                </div>
+
+                <div class="publication-item">
+                    <div class="pub-title">Closed Traction of Impacted Anterior Teeth Using Auxiliary Arch Wire</div>
+                    <div class="pub-authors">Li J, Lingling C, Mrisho M, et al.</div>
+                    <div class="pub-journal">Orthodontic Case Report</div>
+                </div>
+
+                <div class="publication-item">
+                    <div class="pub-title">Key Predictors of Undiagnosed Hypertension Among Middle-Aged Adults in Tanzania: A Machine Learning Analysis of 2022 Demographic and Health Survey</div>
+                    <div class="pub-authors">Tesha I, Liu C, Mrisho M, et al.</div>
+                    <div class="pub-journal">Published</div>
+                </div>
+
+                <div class="publication-item">
+                    <div class="pub-title">Factors Influencing Hemoglobin Variability and Its Prognostic Implications in Chronic Kidney Disease in Dialysis Patients</div>
+                    <div class="pub-authors">Mtore MM, Kombo AM, Tesha I, Mrisho MH, Assad KM, Nofli FO, Ye D, Zhang J, Xue X, Wang G, Zhou H</div>
+                    <div class="pub-journal">JMIRx Med, 2026 (In Press)</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="sidebar">
+            <div class="profile-img-container">
+                <img src="profile.jpg" alt="Mashaka Hassan Mrisho" alt="Profile" class="profile-img" onerror="this.style.display='none'">
+            </div>
+            <div class="sidebar-name">Mashaka<br>Hassan<br>Mrisho</div>
+            <div class="sidebar-title">Masters of Dentistry<br>in Orthodontics</div>
+
+            <div class="sidebar-section">
+                <div class="sidebar-section-title">Contact</div>
+                <div class="contact-item">
+                    <span>✉️</span>
+                    <span>mrishomashaka@gmail.com</span>
+                </div>
+                <div class="contact-item">
+                    <span>📱</span>
+                    <span>+255 755 375 741</span>
+                </div>
+                <div class="contact-item">
+                    <span>🐙</span>
+                    <span>github.com/mrisho-01</span>
+                </div>
+            </div>
+
+            <div class="sidebar-section">
+                <div class="sidebar-section-title">Education</div>
+                <div class="education-item">
+                    <div class="edu-degree">Masters of Dentistry in Orthodontics</div>
+                    <div class="edu-school">Jinzhou Medical University, China</div>
+                    <div class="edu-year">2023 – To date (Upon graduation in June 2026)</div>
+                </div>
+                <div class="education-item">
+                    <div class="edu-degree">Doctor of Dental Surgery (DDS)</div>
+                    <div class="edu-school">Muhimbili University of Health and Allied Sciences (MUHAS)</div>
+                    <div class="edu-year">2014 – 2019</div>
+                </div>
+                <div class="education-item">
+                    <div class="edu-degree">Advanced Certificate of Secondary Education (ACSE)</div>
+                    <div class="edu-school">Bihawana Secondary School</div>
+                    <div class="edu-year">2012 – 2014</div>
+                </div>
+                <div class="education-item">
+                    <div class="edu-degree">Certificate of Secondary Education (CSE)</div>
+                    <div class="edu-school">Kwiro Secondary School</div>
+                    <div class="edu-year">2008 – 2011</div>
+                </div>
+                <div class="education-item">
+                    <div class="edu-degree">Certificate of Primary Education</div>
+                    <div class="edu-school">Shamaliwa Primary School</div>
+                    <div class="edu-year">2001 – 2007</div>
+                </div>
+            </div>
+
+            <div class="sidebar-section">
+                <div class="sidebar-section-title">Languages</div>
+                <div class="language-item">
+                    <span class="lang-name">English:</span> Spoken and Written
+                </div>
+                <div class="language-item">
+                    <span class="lang-name">Kiswahili:</span> Spoken and Written
+                </div>
+            </div>
+
+            <div class="sidebar-section">
+                <div class="sidebar-section-title">Interests</div>
+                <div class="interest-item">Tissue Engineering & Regenerative Medicine</div>
+                <div class="interest-item">CBCT Imaging & Machine Learning</div>
+                <div class="interest-item">Orofacial Disease Management</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- PAGE 2 -->
+    <div class="page page-2">
+        <div class="full-width">
+            <div class="section">
+                <div class="section-title">
+                    <span class="section-icon">📝</span>
+                    Works in Progress
+                </div>
+
+                <div class="publication-item">
+                    <div class="pub-title">Influence of Anterior Dental Crowding on the Occurrence of Alveolar Bone Dehiscence and Fenestration in Adults: A Retrospective Case-Control Study via CBCT Images</div>
+                    <div class="pub-authors">Mrisho M, Lingling C, Li J, et al.</div>
+                    <div class="pub-journal">Submitted to BMC Oral Health (2026) — Manuscript Under Review</div>
+                </div>
+
+                <div class="publication-item">
+                    <div class="pub-title">Orthodontic Management of Vertically Impacted Mandibular Second Molar in Adults: A Rare Case Report</div>
+                    <div class="pub-authors">Mrisho M, Lingling C, Pallangyo M, et al.</div>
+                    <div class="pub-journal">Submitted to JMIRx Med (2026) — Manuscript Under Review</div>
+                </div>
+            </div>
+
+            <div class="section">
+                <div class="section-title">
+                    <span class="section-icon">🎓</span>
+                    Trainings & Certifications
+                </div>
+
+                <div class="training-item">
+                    <div class="training-title">Introduction to Gene Therapy for Educators</div>
+                    <div class="training-institution">MUHAS in collaboration with ASGCT</div>
+                    <div class="training-date">2nd June – 1st July 2025</div>
+                </div>
+
+                <div class="training-item">
+                    <div class="training-title">Introduction to Grant Writing</div>
+                    <div class="training-institution">University of Turku</div>
+                    <div class="training-date">11th – 15th Nov 2024</div>
+                </div>
+
+                <div class="training-item">
+                    <div class="training-title">Computer Aided Design-Computer Aided Manufacturing (CAD/CAM)</div>
+                    <div class="training-institution">Pandental Clinic, Kampala</div>
+                    <div class="training-date">27th Sept – 3rd Oct 2019</div>
+                </div>
+            </div>
+
+            <div class="section">
+                <div class="section-title">
+                    <span class="section-icon">🔬</span>
+                    Research Interests
+                </div>
+                <p class="research-text">
+                    Tissue engineering and regenerative medicine. With focus in application of engineered tissues in the management and prevention of orofacial diseases and injuries to promote oral health and quality of life.
+                </p>
+            </div>
+
+            <div class="section">
+                <div class="section-title">
+                    <span class="section-icon">👥</span>
+                    Referees
+                </div>
+
+                <div class="referee-item">
+                    <div class="ref-name">Dr. Matilda Mtaya Mlangwa</div>
+                    <div class="ref-title">Former Dean School of Dentistry (MUHAS)</div>
+                    <div class="ref-contact">Cell: +255 754 212 109<br>Email: matildamtaya@yahoo.com<br>P.O. Box 65001, Dar es Salaam</div>
+                </div>
+
+                <div class="referee-item">
+                    <div class="ref-name">Dr. Joyce Rose Masalu</div>
+                    <div class="ref-title">Senior Lecturer, Muhimbili University of Health and Allied Sciences</div>
+                    <div class="ref-contact">Cell: +255 754 757 577<br>Email: rfumbuka@yahoo.com<br>P.O. Box 65001, Dar es Salaam</div>
+                </div>
+
+                <div class="referee-item">
+                    <div class="ref-name">Prof. Febronia Kokulengya Kahabuka</div>
+                    <div class="ref-title">Professor, Pediatric Dentistry, Muhimbili University of Health and Allied Sciences</div>
+                    <div class="ref-contact">Cell: +255 754 538 084<br>Email: febby.kahabuka@gmail.com<br>P.O. Box 65001, Dar es Salaam</div>
+                </div>
+            </div>
+
+            <div class="section">
+                <div class="section-title">
+                    <span class="section-icon">✍️</span>
+                    Declaration
+                </div>
+                <p class="declaration-text">
+                    I, <strong>MASHAKA HASSAN MRISHO</strong>, declare that the information I have given is true to the best of my knowledge and I am ready to take liability upon this knowledge.
+                </p>
+                <div class="signature-line">
+                    Signature: ___________________<br>
+                    Dr. Mrisho
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
