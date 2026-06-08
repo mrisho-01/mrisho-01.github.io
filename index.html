@@ -63,13 +63,23 @@
             background: #2c7a7b;
             color: white;
             padding: 30px 20px;
-            order: 1; /* Sidebar on LEFT */
+            order: 1;
         }
 
         .main-content {
             flex: 1;
             padding: 30px 25px;
-            order: 2; /* Main content on RIGHT */
+            order: 2;
+        }
+
+        /* Pages 2 and 3 - Full width, no sidebar */
+        .page-2, .page-3 {
+            display: flex;
+        }
+
+        .full-width {
+            flex: 1;
+            padding: 30px 25px;
         }
 
         .section-title {
@@ -139,12 +149,6 @@
             margin-bottom: 5px;
         }
 
-        .exp-desc {
-            font-size: 10pt;
-            color: #555;
-            line-height: 1.5;
-        }
-
         /* Sidebar Styles */
         .profile-img-container {
             text-align: center;
@@ -198,12 +202,6 @@
             word-break: break-word;
         }
 
-        .contact-icon {
-            width: 16px;
-            height: 16px;
-            flex-shrink: 0;
-        }
-
         .education-item {
             margin-bottom: 15px;
         }
@@ -245,16 +243,6 @@
             content: "▸";
             position: absolute;
             left: 0;
-        }
-
-        /* Page 2 - Full Width */
-        .page-2, .page-3 {
-            display: flex;
-        }
-
-        .full-width {
-            flex: 1;
-            padding: 30px 25px;
         }
 
         .publication-item {
@@ -385,7 +373,7 @@
             <div class="sidebar-section">
                 <div class="sidebar-section-title">About Me</div>
                 <p style="font-size:9pt; line-height:1.5; text-align:justify;">
-                    Dental researcher and orthodontist with expertise in CBCT analysis of alveolar bone defects and machine learning applications for predicting bone fenestration/dehiscence.
+                    Orthodontist, researcher, and academic staff at Muhimbili University of Health and Allied Sciences (MUHAS). Committed to advancing public oral health through clinical practice, research, and mentoring the next generation of dental professionals.
                 </p>
             </div>
 
@@ -448,13 +436,13 @@
             </div>
 
             <div class="sidebar-section">
-                <div class="sidebar-section-title">Interests</div>
-                <div class="interest-item">Tissue Engineering and Regenerative Medicine</div>
-                <div class="interest-item">CBCT Imaging and Machine Learning</div>
-                            </div>
+                <div class="sidebar-section-title">Research Interests</div>
+                <div class="interest-item">Machine Learning and Data Science</div>
+                <div class="interest-item">Tissue Engineering and Regenerative Medicine in Dentistry</div>
+            </div>
         </div>
 
-        <!-- MAIN CONTENT (RIGHT) - NO HEADER NAME -->
+        <!-- MAIN CONTENT (RIGHT) -->
         <div class="main-content">
             <div class="section">
                 <div class="section-title">
@@ -467,7 +455,7 @@
                         <span class="exp-title">Masters of Dentistry in Orthodontics</span>
                         <span class="exp-date">2023 – 2026</span>
                     </div>
-                    <div class="exp-company">Jinzhou Medical University, China (June 2026)</div>
+                    <div class="exp-company">Jinzhou Medical University, China</div>
                 </div>
 
                 <div class="experience-item">
@@ -585,7 +573,7 @@
 
                 <div class="publication-item">
                     <div class="pub-title">Factors Influencing Hemoglobin Variability and Its Prognostic Implications in Chronic Kidney Disease in Dialysis Patients</div>
-                    <div class="pub-authors">Mtore MM, Kombo AM, Tesha I, Mrisho MH, Assad KM, Nofli FO, Ye D, Zhang J, Xue X, Wang G, Zhou H</div>
+                    <div class="pub-authors">Mtore MM, Kombo AM, Tesha I, Mrisho MH, et al.</div>
                     <div class="pub-journal">JMIRx Med, 2026 (In Press) — DOI: <a href="https://doi.org/10.2196/95524" target="_blank" style="color:#2c7a7b; text-decoration:underline;">10.2196/95524</a></div>
                 </div>
             </div>
@@ -617,7 +605,7 @@
         </div>
     </div>
 
-    <!-- PAGE 2 -->
+    <!-- PAGE 2 - Full Width, No Sidebar -->
     <div class="page page-2">
         <div class="full-width">
             <div class="section">
@@ -641,16 +629,20 @@
 
             <div class="section">
                 <div class="section-title">
-                    <span class="section-icon">🔬</span>
-                    Research Interests
+                    <span class="section-icon">✍️</span>
+                    Declaration
                 </div>
-                <p class="research-text">
-                    Tissue engineering and regenerative medicine. With focus in application of engineered tissues in the management and prevention of orofacial diseases and injuries to promote oral health and quality of life.
+                <p class="declaration-text">
+                    I, <strong>MASHAKA HASSAN MRISHO</strong>, declare that the information I have given is true to the best of my knowledge and I am ready to take liability upon this knowledge.
                 </p>
+                <div class="signature-line">
+                    Signature: ___________________<br>
+                    Dr. Mrisho
+                </div>
             </div>
-
-
         </div>
     </div>
+
+
 </body>
 </html>
